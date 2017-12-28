@@ -16,7 +16,7 @@ if($row>0)
     $res = mysqli_query($mysqli,$sql);
     $row = mysqli_fetch_array($res);
     if($row[0]==$password = $_POST['inputpassword']){
-        echo "로그인성공";
+        echo "로그인성공!!";
         session_start();
         $_SESSION['email'] = $row[0];
     }
