@@ -1,5 +1,12 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+include './core/dbconn.php';
+$eid = $_SESSION['oid'];
+$sql = "SELECT * FROM `mentor` WHERE `oid` = ".$oid;
+$res = mysqli_query($mysqli,$sql);
+$row = mysqli_fetch_array($res);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,17 +28,17 @@ include "./core/nav.php";
         ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
             <h1 class="page-header">Dashboard</h1>
-            <form class="form-horizontal" role="form" method="post" action="index.php" enctype="multipart/form-data">
+            <form class="form-horizontal" role="form" method="post" action="./core/addhw.php" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name" class="col-sm-2 control-label">NAME</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="<?php echo $row['name']?>" value="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-2 control-label">EMAIL</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo $row['email']?>" value="">
                     </div>
                 </div>
                 <div class="form-group">
