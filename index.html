@@ -1,87 +1,78 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./assets/lib/bootstrap-3.3.2-dist/favicon.ico">
 
-<?php
-include "./core/head.php";
-?>
-<link href="./assets/lib/menu/css/metro.css" rel="stylesheet" media="screen">
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/lib/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./assets/css/dashboard.css" rel="stylesheet">
+
+</head>
+
 <body>
 
-<?php
-include "./core/nav.php";
-?>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
 
 <div class="container-fluid">
     <div class="row">
-        <?php
-        include "./core/sidebar.php";
-        ?>
-
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item</a></li>
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+                <li><a href="">More navigation</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+            </ul>
+        </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">Dashboard</h1>
-            <ul class="metro">
-                <!-- 1. Envato Marketplaces -->
-                <h2 class="sub-header">Section title</h2>
-                <li class="big-tile-text envato">
 
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-            </ul>
-            <ul class="metro">
-                <h2 class="sub-header">Section title</h2>
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-            </ul>
-
-                <!-- end Envato Marketplaces -->
-
-            <!--<div class="row placeholders">
+            <div class="row placeholders">
                 <div class="col-xs-6 col-sm-3 placeholder">
                     <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>Label</h4>
@@ -231,7 +222,7 @@ include "./core/nav.php";
                     </tr>
                     </tbody>
                 </table>
-            </div>-->
+            </div>
         </div>
     </div>
 </div>
@@ -241,12 +232,5 @@ include "./core/nav.php";
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="./assets/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
-<script>
-    function activesidebar($activemenu) {
-        $menu = "#"+$activemenu;
-        $($menu).addClass("active");
-    }
-    activesidebar("dashboard");
-</script>
 </body>
 </html>

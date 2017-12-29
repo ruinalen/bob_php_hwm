@@ -8,9 +8,15 @@
 session_start();
 include './core/dbconn.php';
 
-$SID = $_SESSION['sid'];
-$sql = "SELECT * FROM `member` WHERE `sid` = ".$SID;
-
+if($_SESSION['perm']==1)
+{
+    $oid = $_SESSION['oid'];
+    $sql = "SELECT * FROM `mentor` WHERE `oid` = ".$oid;
+}
+else {
+    $eid = $_SESSION['eid'];
+    $sql = "SELECT * FROM `mentee` WHERE `eid` = ".$eid;
+}
 $res = mysqli_query($mysqli,$sql);
 $row = mysqli_fetch_array($res);
 
@@ -123,9 +129,28 @@ $row = mysqli_fetch_array($res);
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Generator:</label>
+                    <label class="col-md-3 control-label">Track:</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="text" name="inputgen" value="<?php echo $row['gen']?>" disabled>
+                        <input class="form-control" type="text" name="inputtrack" value="<?php
+                            if($row['track'] == 1){
+                                echo "취약점 트랙";
+                            }
+                            else if($row['track'] == 2){
+                                echo "포렌식 트랙";
+                            }
+                            else if($row['track'] == 3){
+                                echo "컨설팅 트랙";
+                            }
+                            else if($row['track'] == 4){
+                                echo "특기병 트랙";
+                            }
+                        ?>" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Generation:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" name="inputgen" value="<?php echo $row['gen']?>기" disabled>
                     </div>
                 </div>
                 <div class="form-group">

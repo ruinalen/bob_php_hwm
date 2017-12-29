@@ -4,7 +4,13 @@
  * User: donghyunkim
  * Date: 2017. 12. 29.
  * Time: PM 1:17
- */?>
+ */
+    session_start();
+    if(!isset($_SESSION['eid']) || !isset($_SESSION['oid']) && !isset($_SESSION['name']))
+    {
+        header("Location: http://125.131.189.38/bob_php_hwm/register.html");
+    }
+?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -22,10 +28,10 @@
                 <li><a href="#">Settings</a></li>
                 <li><a href="./profile.php"><?php echo $_SESSION['name'];?></a></li>
                 <li><a href="./core/logout.php">Logout</a></li>
-            </ul>
+            </ul><!--
             <form class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Search...">
-            </form>
+            </form>-->
         </div>
     </div>
 </nav>
