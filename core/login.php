@@ -5,23 +5,30 @@
  * Date: 2017. 12. 28.
  * Time: PM 5:40
  */
-include './dbconn.php';
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
+include './dbconn.php';
+include '../assets/lib/password.php';
+$email = $_POST['inputemail'];
 $sql = "SELECT * FROM `member` WHERE `email` = '".$email."'";
 $res = mysqli_query($mysqli,$sql);
 $row = mysqli_fetch_row($res);
 if($row>0)
 {
-    $sql="SELECT `password` FROM `member` WHERE `email` LIKE '".$email."'";
+    $sql="SELECT `sid`,`name`,`password` FROM `member` WHERE `email` LIKE '".$email."'";
     $res = mysqli_query($mysqli,$sql);
     $row = mysqli_fetch_array($res);
-    if($row[0]==$password = $_POST['inputpassword']){
-        echo "로그인성공!!";
+    $password = $_POST['inputpassword'];
+    if (password_verify($password,$row['password'])) {
+
         session_start();
-        $_SESSION['email'] = $row[0];
+        $_SESSION['sid'] = $row['sid'];
+        $_SESSION['name'] = $row['name'];
+        header("Location: http://125.131.189.38/bob_php_hwm/index.php");
     }
-    else{
-        echo "패스워드틀렸어";
+    else {
+        echo "로그인 실패!";
     }
 }
 else{
