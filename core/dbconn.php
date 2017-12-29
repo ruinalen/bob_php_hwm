@@ -11,7 +11,5 @@ $user = 'root';
 $pw = 'dlrauddmlfhfltm!';
 $dbName = 'hwm';
 $mysqli = new mysqli($host, $user, $pw, $dbName);
-$email = $_POST['inputemail'];
-$password = $_POST['inputpassword'];
 
 ?>

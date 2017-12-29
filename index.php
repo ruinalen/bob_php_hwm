@@ -7,7 +7,7 @@ session_start();
 <?php
 include "./core/head.php";
 ?>
-<link href="./assets/lib/menu/css/metro.css" rel="stylesheet" media="screen">
+
 <body>
 
 <?php
@@ -19,69 +19,10 @@ include "./core/nav.php";
         <?php
         include "./core/sidebar.php";
         ?>
-
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">Dashboard</h1>
-            <ul class="metro">
-                <!-- 1. Envato Marketplaces -->
-                <h2 class="sub-header">Section title</h2>
-                <li class="big-tile-text envato">
 
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-            </ul>
-            <ul class="metro">
-                <h2 class="sub-header">Section title</h2>
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-                <li class="big-tile-text envato">
-
-                    <a class="tile" href="#">
-                        <span>Envato Marketplaces</span>
-                    </a><!-- end .tile -->
-
-                </li><!-- end .small-tile-text -->
-            </ul>
-
-                <!-- end Envato Marketplaces -->
-
-            <!--<div class="row placeholders">
+            <div class="row placeholders">
                 <div class="col-xs-6 col-sm-3 placeholder">
                     <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>Label</h4>
@@ -231,7 +172,7 @@ include "./core/nav.php";
                     </tr>
                     </tbody>
                 </table>
-            </div>-->
+            </div>
         </div>
     </div>
 </div>
@@ -241,12 +182,5 @@ include "./core/nav.php";
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="./assets/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
-<script>
-    function activesidebar($activemenu) {
-        $menu = "#"+$activemenu;
-        $($menu).addClass("active");
-    }
-    activesidebar("dashboard");
-</script>
 </body>
 </html>

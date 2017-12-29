@@ -8,25 +8,10 @@
 ?>
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
-        <li id="dashboard">
-            <a href="index.php">DASHBOARD
-            </a>
-        </li>
-        <li id="manager">
-            <a href="manager.php">MANAGER
-            </a>
-        </li>
-        <li id="schedule">
-            <a href="schedule.php">SCHEDULE
-            </a>
-        </li>
-        <li id="chat">
-            <a href="#">CHAT
-            </a>
-        </li>
-        <li id="freeboard">
-            <a href="#">FREEBOARD
-            </a>
-        </li>
+        <li class="active"><a href="#">DASHBOARD <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">MANAGER <span class="sr-only"></span></a></li>
+        <li><a href="schedule.php">SCHEDULE</a></li>
+        <li><a href="#">CHAT</a></li>
+        <li><a href="#">FREEBOARD</a></li>
     </ul>
 </div>

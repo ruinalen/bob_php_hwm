@@ -34,7 +34,7 @@ include "./core/nav.php";
         include "./core/sidebar.php";
         ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">SCHEDULE</h1>
+            <h1 class="page-header">Dashboard</h1>
             <div id='loading'>loading...</div>
 
             <div id='calendar'></div>
@@ -93,12 +93,5 @@ include "./core/nav.php";
 <script src='./assets/lib/fullcalendar-3.8.0/fullcalendar.min.js'></script>
 <script src='./assets/lib/fullcalendar-3.8.0/gcal.min.js'></script>
 <script src='./assets/lib/fullcalendar-3.8.0/gcal.min.js'></script>
-<script>
-    function activesidebar($activemenu) {
-        $menu = "#"+$activemenu;
-        $($menu).addClass("active");
-    }
-    activesidebar("schedule");
-</script>
 </body>
 </html>
